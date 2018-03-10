@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zuidaima.appoint.dao.BookDao">
-	<select id="queryById" parameterType="long" resultType="com.Book.entiy.Book" >
+<mapper namespace="com.Book.dao.BookDao">
+	<select id="queryById" parameterType="long" resultType="com.Book.entity.Book" >
 		<!-- 具体的sql -->
 		SELECT
 			book_id,
@@ -16,7 +16,7 @@
 			book_id = #{bookId}
 	</select>
 
-	<select id="querySome" parameterType="com.Book.entiy.Book" resultType="com.Book.entiy.Book">
+	<select id="querySome" parameterType="com.Book.entity.Book" resultType="com.Book.entity.Book">
 		SELECT book_id,name,introd,number FROM book
 		<where>
 			<!-- <if test="name !=null and !&quot;&quot;.equals(name.trim())">  -->
@@ -25,7 +25,7 @@
 		</where> 
 	</select> 
 		
-	<select id="queryAll" resultType="com.zuidaima.appoint.entiy.Book">
+	<select id="queryAll" resultType="com.Book.entity.Book">
 		SELECT
 			book_id,
 			name,
